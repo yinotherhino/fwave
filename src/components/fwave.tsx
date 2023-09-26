@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import React from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
-import { FlutterWaveProps } from "flutterwave-react-v3/dist/types";
 
 export default function FWave() {
    const config = {
       public_key: "FLWPUBK-8667cecf718fd4c5a67183a13d7c439d-X",
-      tx_ref: Date.now(),
+      tx_ref: Date.now().toString(),
       amount: 3,
       currency: "USD",
       payment_options: "card,mobilemoney,ussd",
@@ -22,8 +19,7 @@ export default function FWave() {
       },
    };
 
-   //@ts-ignore
-   const fwConfig: FlutterWaveProps & { text: string; onClose: () => void } = {
+   const fwConfig = {
       ...config,
       text: "Pay with Flutterwave!",
       callback: (response: unknown) => {

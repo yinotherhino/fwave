@@ -5,12 +5,12 @@ function App() {
    const navigate = useNavigate();
    return (
       <>
-         <h1
+         <button
             onClick={() => {
                navigate("/payments");
             }}>
             Make Payment
-         </h1>
+         </button>
          <Routes>
             <Route path="/payments" element={<FWave />} />
          </Routes>{" "}
